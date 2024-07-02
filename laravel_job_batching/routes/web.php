@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('file-uploads',\App\Http\Controllers\FileUploadController::class);
+Route::get('file-upload-batch/{id}',[\App\Http\Controllers\FileUploadController::class,'getBatch']);
